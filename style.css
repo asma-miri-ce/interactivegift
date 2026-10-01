@@ -1,0 +1,71 @@
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* کل صفحه */
+.gift {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    cursor: pointer;
+}
+
+/* عکس اصلی */
+.inside {
+    position: absolute;
+    inset: 0;
+
+    width: 100vw;
+    height: 100vh;
+
+    object-fit: contain;
+    background: black;
+
+    opacity: 0;
+    transform: scale(0.95);
+
+    transition:
+        opacity 0.7s ease,
+        transform 0.7s ease;
+}
+
+.inside.show {
+    opacity: 1;
+    transform: scale(1);
+}
+
+
+/* عکس کادو - کوچک‌تر */
+.wrapper {
+    position: absolute;
+
+    width: 400px;
+    height: 300px;
+
+    left: 50%;
+    top: 50%;
+
+    transform: translate(-50%, -50%);
+
+    object-fit: cover;
+
+    border-radius: 12px;
+
+    transition:
+        transform 0.8s ease,
+        opacity 0.8s ease;
+}
+
+/* باز شدن کادو */
+.wrapper.open {
+    transform: translate(-50%, -50%) scale(1.4);
+    opacity: 0;
+}

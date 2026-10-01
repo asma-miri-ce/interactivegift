@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gift</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="gift" onclick="openGift()">
+
+    <!-- عکس اصلی که داخل کادو قرار دارد -->
+    <img src="chair.jpg" class="inside">
+
+    <!-- کاغذ کادو -->
+    <img src="gift.jpg" class="wrapper" id="wrapper">
+
+</div>
+
+<script>
+function openGift() {
+    const wrapper = document.getElementById("wrapper");
+
+    wrapper.classList.add("open");
+
+    setTimeout(() => {
+        document.querySelector(".inside").classList.add("show");
+    }, 500);
+}
+</script>
+
+</body>
+</html>
